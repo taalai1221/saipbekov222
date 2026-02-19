@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    background: linear-gradient(#ffe6f2, #ffffff);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  /* Title */
+  .title {
+    margin-top: 40px;
+    color: #d63384;
+    font-size: 32px;
+    animation: glow 2s infinite alternate;
+  }
+  
+  /* 🌸 Flower wrapper — фикс снизу */
+  .flower-wrapper {
+    position: fixed;
+    bottom: -20px;        /* ВАЖНО: цветок не обрезается */
+    left: 50%;
+    transform: translateX(-50%);
+    height: 520px;
+    pointer-events: none;
+  }
+  
+  /* 🌸 Flower */
+  .flower {
+    position: relative;
+    width: 240px;
+    height: 520px;
+    animation: growUp 2.8s ease-out forwards;
+  }
+  
+  /* 🌿 Stem — длинный и цельный */
+  .stem {
+    position: absolute;
+    bottom: 0;
+    left: 116px;
+    width: 8px;
+    height: 300px;
+    background: linear-gradient(#6fdc8c, #2f9e44);
+    border-radius: 4px;
+  }
+  
+  /* 🌺 Petals — плотнее друг к другу */
+  .petal {
+    position: absolute;
+    width: 100px;
+    height: 180px;
+    background: linear-gradient(#ffb6d5, #ff5fa2);
+    border-radius: 50%;
+    top: 160px;
+    left: 70px;
+    transform-origin: bottom center;
+  }
+  
+  .p1 { transform: rotate(0deg); }
+  .p2 { transform: rotate(60deg); }
+  .p3 { transform: rotate(120deg); }
+  .p4 { transform: rotate(180deg); }
+  .p5 { transform: rotate(240deg); }
+  .p6 { transform: rotate(300deg); }
+  
+  /* 🌸 Center — ровно по центру */
+  .center {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    background: #ff2f92;
+    border-radius: 50%;
+    top: 250px;
+    left: 99px;
+    box-shadow: 0 0 25px pink;
+  }
+  
+  /* ❤️ Hearts */
+  .heart {
+    position: fixed;
+    top: -20px;
+    font-size: 22px;
+    animation: fall 6s linear forwards;
+  }
+  
+  /* 🌼 Small flowers */
+  .small-flower {
+    position: fixed;
+    font-size: 18px;
+    animation: floatUp 4s linear forwards;
+  }
+  
+  /* Animations */
+  @keyframes growUp {
+    from {
+      transform: translateY(140px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fall {
+    to {
+      transform: translateY(110vh);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes floatUp {
+    to {
+      transform: translateY(-120px);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes glow {
+    from { text-shadow: 0 0 10px pink; }
+    to { text-shadow: 0 0 25px hotpink; }
+  }
